@@ -38,7 +38,11 @@ return NextResponse.next();
 }
 
 
-export default authMiddleware({});
+export default () => {
+  useEffect(() => {
+    authMiddleware({});
+  }, []);
+};
 
 
 

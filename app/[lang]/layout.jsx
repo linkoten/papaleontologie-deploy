@@ -1,4 +1,4 @@
-import { ClerkProvider } from '@clerk/nextjs/app-beta'
+import { ClerkProvider } from '@clerk/nextjs'
 import Footer from './components/layout/footer'
 import Header from './components/layout/header'
 import { Inter } from 'next/font/google'
