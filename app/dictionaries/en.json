@@ -1,0 +1,39 @@
+{
+    "layout": {
+      "about": "About",
+      "blog": "Blog",
+      "shop": "Shop",
+      "connexion": "Sign in"
+    },
+    "page": {
+      "home": {
+        "shop": "Shop",
+        "blog": "Blog"
+      },
+      "blog": {
+        "breadCrumbs1": "Home",
+        "filterButton": "All Articles"
+      },
+      "about": {
+        "title": "About Us",
+        "description": "This is the about page"
+      },
+      "shop": {
+        "header": "Our Fossils On Sale",
+        "searchBar": "Search",
+        "breadCrumbs1": "Home",
+        "breadCrumbs2": "Shop"
+        
+      },
+      "product": {
+        "cartButton": "ADD TO CART",
+        "breadCrumbs1": "Home",
+        "breadCrumbs2": "Shop"
+      },
+      "blogPost": {
+        "breadCrumbs1": "Home",
+        "breadCrumbs2": "Blog"
+
+      }
+    }
+  }

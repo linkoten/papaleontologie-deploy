@@ -1,0 +1,39 @@
+{
+    "layout": {
+      "about": "A Propos",
+      "blog": "Blog",
+      "shop": "Boutique",
+      "connexion": "Se Connecter"
+    },
+    "page": {
+      "home": {
+        "shop": "Boutique",
+        "blog": "Blog"
+      },
+      "about": {
+        "title": "A Propos",
+        "description": "Une page nous présentant"
+      },
+      "blog": {
+        "title": "Je test",
+        "breadCrumbs1": "Accueil",
+        "filterButton": "Tous Les Articles"
+      },
+      "shop": {
+        "header": "Nos Fossiles En Vente",
+        "searchBar": "Rechercher",
+        "breadCrumbs1": "Accueil",
+        "breadCrumbs2": "Boutique"
+      },
+      "product": {
+        "cartButton": "AJOUTER AU PANIER",
+        "breadCrumbs1": "Accueil",
+        "breadCrumbs2": "Boutique"
+      },
+      "blogPost": {
+        "breadCrumbs1": "Acceuil",
+        "breadCrumbs2": "Blog"
+
+      }
+    }
+  }
