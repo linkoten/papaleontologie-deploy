@@ -52,7 +52,7 @@ setLanguage(language === 'english' ? 'french' : 'english');
           <div className='flex justify-end'>
           <button className='btn btn-outline  mx-12 my-8 sm:btn-lg'
           onClick={toggleLanguage}>
-            ({language === 'english' ? 'Version Française' : 'English Version'})
+            ({language === 'english' ? 'Changer en Français' : 'Switch To English'})
           </button>
           </div>
           <BlogFilter page= {page}
@@ -65,7 +65,7 @@ setLanguage(language === 'english' ? 'french' : 'english');
               ({ slug, date, id, title, coverImage, tag, excerpt }) => (
                 <div
                   key={id}
-                  className='card w-48 bg-base-200 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-base-300 xl:w-72 '
+                  className='card w-42 bg-base-200 shadow-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-base-300 xl:w-72 '
                 >
                   <Link key={id} href={`/blog/${slug}`}>
                     <div className='bg-stone-300 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg xl:aspect-h-8 xl:aspect-w-7'>
@@ -88,8 +88,8 @@ setLanguage(language === 'english' ? 'french' : 'english');
                       <h2 className='card-title'>{title}</h2>
                       <p className=' text-xs'>{excerpt}</p>
                       <div className='card-actions items-end justify-end'>
-                        <div className='badge badge-outline'>{tag}</div>
-                        <div className='badge badge-outline'>{date}</div>
+                        <div className='badge badge-outline text-2xs sm:text-xs '>{tag}</div>
+                        <div className='badge badge-outline text-2xs sm:text-xs'>{date}</div>
                       </div>
                     </div>
                   </Link>

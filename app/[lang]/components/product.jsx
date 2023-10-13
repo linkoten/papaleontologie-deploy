@@ -55,7 +55,8 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
       router.refresh()
     })
   }
-
+  
+console.log(product)
 
   return (
     <>
@@ -79,7 +80,7 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
         {currentLanguage === 'fr' ? 'Switch to English' : 'Changer en Français'}
       </button>
       </div>
-      <section className='py-24'>
+      <section >
       
         <div className='container'>
           <div className='lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
@@ -123,15 +124,18 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
                 </Tab.List>
               </div>
 
-              <Tab.Panels className='aspect-h-2 aspect-w-3 w-full h-auto'>
+              <Tab.Panels className='aspect-h-1 aspect-w-1 w-full h-auto'>
                 {product.images?.map(image => (
                   <Tab.Panel key={image.id}>
                     <Image
                       priority
                       src={image.file.url}
                       alt={image.file.metadata || ''}
+                      style={{
+    objectFit: 'contain',
+  }}
                       fill
-                      className='h-full w-full sm:rounded-lg object-cover object-center'
+                      className='h-full w-full sm:rounded-lg '
                       sizes='(min-width: 1024px) 50vw, 100vw'
                     />
                   </Tab.Panel>
@@ -140,8 +144,8 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
             </Tab.Group>
 
             {/* Product info */}
-            <div className='mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0'>
-              <h1 className='text-3xl font-bold tracking-tight text-neutral'>
+            <div className='mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-20'>
+              <h1 className='text-3xl font-bold tracking-tight text-neutral lg:mt-20'>
                 {product.name}
               </h1>
 
@@ -183,12 +187,18 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
                 />
               </div>
 
+              <div
+              className={`text-lg text-stone-700 pt-10  ${product.stock_level >= 1 ? 'text-success-content' : 'text-error'}`}>
+              Stock : 
+  {product.stock_level >= 1 ? product.stock_level : page.product.noStock}
+              </div>
+
               <form className='mt-6' onSubmit={handleSubmit}>
                 <div className='sm:flex-col1 mt-10 flex'>
                   <button
                     type='submit'
                     disabled={isMutating}
-                    className='btn btn-success btn-outline flex max-w-xs flex-1 items-center justify-center px-8 py-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 sm:w-full'
+                    className={`btn ${product.stock_level >= 1 ? 'btn-success' : 'btn-disabled'} btn-outline flex max-w-xs flex-1 items-center justify-center px-8 py-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 sm:w-full`}
                   >
                     {isMutating ? <Blinker /> : page.product.cartButton}
                   </button>

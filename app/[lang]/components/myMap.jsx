@@ -7,7 +7,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import L from 'leaflet';
 
-const MyMap = ({ markers }) => {
+const MyMap = ({ markers, markerInformation }) => {
   // Définissez ici votre marqueur personnalisé
   const customIcon = new L.Icon({
     iconUrl: '../../images/marker.png', // Chemin vers votre image PNG de marqueur personnalisé
@@ -15,9 +15,6 @@ const MyMap = ({ markers }) => {
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
   });
-
-
- 
 
   return (
     <MapContainer center={[markers[0].latitude, markers[0].longitude]} zoom={9} style={{ width: '100%', height: '300px' }} >
@@ -34,6 +31,7 @@ const MyMap = ({ markers }) => {
           animate={true}
         >
           <Popup>
+          {markerInformation[index]} <br />
             A marker with coordinates: <br />
             Latitude: {marker.latitude} <br />
             Longitude: {marker.longitude}

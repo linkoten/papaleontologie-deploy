@@ -21,13 +21,13 @@ const Header = ({layout}) => {
 
   return (
     <>
-      <header data-theme='corporate' className='  bg-fifth-color text-primary-content rounded-xl z-10 py-10 m-5 '>
+      <header data-theme='corporate' className='  bg-fifth-color text-primary-content rounded-xl z-10 py-10 m-5  '>
         <nav className=' container flex items-center justify-between'>
           {/* Logo */}
           <div>
             <Link
               href='/'
-              className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center text-2xs font-bold uppercase tracking-widest sm:text-sm lg:text-2xl'
+              className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center text-3xs font-bold uppercase tracking-widest sm:text-sm lg:text-2xl'
             >
               Papaleontologie
             </Link>
@@ -35,29 +35,29 @@ const Header = ({layout}) => {
 
           {/* Nav links */}
           <ul className='flex items-center gap-2 sm:gap-6 lg:gap-10'>
-            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-2xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm '>
+            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-3xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm '>
                 <Link href='/about'>{layout.about}</Link>
             </li>
             <SignedIn>
-            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-2xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm'>
+            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-3xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm'>
               <Link href='/blog'>{layout.blog}</Link>
             </li>
-            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-2xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm '>
+            <li className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-3xs font-medium uppercase tracking-wider sm:text-xs lg:text-sm '>
               <Link href='/products'>{layout.shop}</Link>
             </li>
             </SignedIn>
           </ul>
 
           {/* Shopping cart */}
-          <div className=' flex items-center justify-between gap-2 lg:gap-6  '>
+          <div className=' flex items-center  justify-between gap-1 lg:gap-6  '>
             <button
               className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center lg:gap-x-2 pl-4 '
               onClick={() => setCartSliderIsOpen(open => !open)}
             >
-              <ShoppingCartIcon className='h-7 w-7  ' />
+              <ShoppingCartIcon className='h-4 w-4 sm:h-7 sm:w-7  ' />
 
               {cart?.item_quantity ? (
-                <span className='flex h-5 w-5 items-center justify-center rounded bg-sky-600 text-2xs font-medium text-white lg:text-xs '>
+                <span className='flex h-2 w-2 items-center justify-center rounded bg-sky-600 text-2xs font-medium text-white lg:text-xs '>
                   {cart?.item_quantity}
                 </span>
               ) : null}

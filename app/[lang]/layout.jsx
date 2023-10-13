@@ -18,8 +18,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'next ecommerce',
-  description: 'Created by Hamed Bahram'
+  title: 'Papaleontologie',
+  description: 'A Fossil E-Commerce Website where you will find Rare and Uniques Fossils from Morroco and France, especially Trilobites and Shells.'
 }
 
 export default cache(async function RootLayout({ children, params }) {

@@ -30,19 +30,8 @@ export default async function Page({ params: { lang }}) {
           
           <div className='text-center'>
             
-            <div className='mt-10 flex items-center justify-center gap-x-6'>
-              <Link
-                href='/products'
-                className='rounded-md bg-sky-600 px-3.5 py-2.5 text-sm font-semibold text-sixth-color shadow-sm hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400'
-              >
-                {page.home.shop}
-              </Link>
-              <Link
-                href='/blog'
-                className='text-sm font-semibold leading-6 text-sixth-color'
-              >
-                {page.home.blog} <span aria-hidden='true'>→</span>
-              </Link>
+            <div className=' text-sixth-color bold'>
+            Papaleontologie
             </div>
           </div>
         </div>

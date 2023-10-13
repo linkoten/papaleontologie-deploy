@@ -170,7 +170,6 @@ const AttributesList = ({page, attributes, products}) => {
   const handlePriceFilter = event => {
     const range = event.target.value
     setPrice(range)
-    console.log(setPrice)
   }
 
   const handleSortingChange = event => {
@@ -209,9 +208,7 @@ const AttributesList = ({page, attributes, products}) => {
   const sortedPeriodValues = sortedAttributeValues['Period']
   const sortedStagesValues = sortedAttributeValues['Stages']
 
-  console.log(products)
-  console.log(sortedCategoryValues)
-
+  
   // Get current posts
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -220,6 +217,8 @@ const AttributesList = ({page, attributes, products}) => {
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  console.log(currentProducts)
 
   return (
     <div>
@@ -244,7 +243,7 @@ const AttributesList = ({page, attributes, products}) => {
      
       <div className=' m-5 rounded-xl'>
         <div className='h-full w-full flex-col place-items-center  '>
-          <div className=' bg-base-200 divide-doubled h-128px  mx-8 mt-10 grid grid-cols-2  justify-center space-x-2 space-y-2  p-8 sm:grid-cols-2 xl:grid-cols-8'>
+          <div className=' bg-base-200 divide-doubled h-128px   mt-10 grid grid-cols-2  justify-center space-x-2 space-y-2  p-8 sm:grid-cols-2 xl:grid-cols-8 lg:mx-8'>
             <div className='flex justify-center pl-2 pt-2 '>
               <select
                 id='category'
@@ -481,6 +480,9 @@ const AttributesList = ({page, attributes, products}) => {
                     <p className='text-stone-900 mt-1 text-lg font-medium'>
                       {formatCurrency({ amount: product.price })}
                     </p>
+                    <p className={`text-lg text-stone-700 flex justify-end pb-2 pr-2  ${product.stock_level >= 1 ? 'text-success-content' : 'text-error'}`}>
+  {product.stock_level >= 1 ? `Stock: ${product.stock_level}` : page.shop.noStock}
+</p>
                     </div>
                   </Link>
                 ))}

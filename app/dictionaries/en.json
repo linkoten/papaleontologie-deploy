@@ -22,17 +22,21 @@
         "header": "Our Fossils On Sale",
         "searchBar": "Search",
         "breadCrumbs1": "Home",
-        "breadCrumbs2": "Shop"
+        "breadCrumbs2": "Shop",
+        "noStock": "Out Of Stock"
+
         
       },
       "product": {
         "cartButton": "ADD TO CART",
         "breadCrumbs1": "Home",
-        "breadCrumbs2": "Shop"
+        "breadCrumbs2": "Shop",
+        "noStock": "Out Of Stock"
       },
       "blogPost": {
         "breadCrumbs1": "Home",
-        "breadCrumbs2": "Blog"
+        "breadCrumbs2": "Blog",
+        "buttonHome": "Home"
 
       }
     }

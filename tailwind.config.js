@@ -39,7 +39,8 @@ module.exports = {
     extend: {
       fontSize: {
         xs: '12px',
-        '2xs': '10px'
+        '2xs': '10px',
+        '3xs': '8px'
       },
       keyframes: {
         blink: {

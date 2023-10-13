@@ -3,7 +3,6 @@ import GetPosts from '../components/hygraph/getPosts'
 import { GraphQLClient } from 'graphql-request'
 
 
-
 const getPosts = async () => {
   const hygraph = new GraphQLClient(
     'https://api-eu-west-2.hygraph.com/v2/clkp6kxt31b6x01ta51b202ki/master'

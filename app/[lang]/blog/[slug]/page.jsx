@@ -21,6 +21,7 @@ const getPost = async params => {
         title
         date
         tag
+        
         content {
           json
           
@@ -34,6 +35,7 @@ const getPost = async params => {
         title
         date
         tag
+        markerInformation
         content {
           json
 
@@ -165,11 +167,7 @@ export default function Posts({ params }) {
 
   return (
     
-    
-    
     <div className='mx-6 flex flex-col relative z-10 '>
-
-    
 
 <div className=" text-sm breadcrumbs font-extrabold">
   <ul>
@@ -184,12 +182,12 @@ export default function Posts({ params }) {
 
       
       
-      <Map markers={currentPosts.carte} />
+      <Map markers={currentPosts.carte} markerInformation={currentPosts.markerInformation} />
 
       <div className='flex justify-end'>
           <button className='btn btn-outline  mx-12 mt-8 sm:btn-lg'
           onClick={toggleLanguage}>
-            ({language === 'english' ? 'Version Française' : 'English Version'})
+            ({language === 'english' ? 'Changer en Français' : 'Switch To English'})
           </button>
           </div>
 

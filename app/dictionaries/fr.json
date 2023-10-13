@@ -23,16 +23,21 @@
         "header": "Nos Fossiles En Vente",
         "searchBar": "Rechercher",
         "breadCrumbs1": "Accueil",
-        "breadCrumbs2": "Boutique"
+        "breadCrumbs2": "Boutique",
+        "noStock": "Rupture de Stock"
+
       },
       "product": {
         "cartButton": "AJOUTER AU PANIER",
         "breadCrumbs1": "Accueil",
-        "breadCrumbs2": "Boutique"
+        "breadCrumbs2": "Boutique",
+        "noStock": "Rupture de Stock"
+
       },
       "blogPost": {
         "breadCrumbs1": "Acceuil",
-        "breadCrumbs2": "Blog"
+        "breadCrumbs2": "Blog",
+        "buttonHome": "Accueil"
 
       }
     }
