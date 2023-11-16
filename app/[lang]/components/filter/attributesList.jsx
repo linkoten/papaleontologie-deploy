@@ -61,17 +61,17 @@ const AttributesList = ({page, attributes, products}) => {
     } catch (error) {
       console.error('Erreur lors du chargement des produits :', error);
     }
-  })
+  })*/
   
   useEffect(() => {
-    fetchProducts(); // Appel initial pour charger les produits
+    products; // Appel initial pour charger les produits
   
-    const interval = setInterval(fetchProducts, 60000);
+    const interval = setInterval(products, 60000);
   
     return () => {
       clearInterval(interval);
     }
-  }, [locale]);
+  }, []);
 
 
   /*const fetchAttributes = async () => {
