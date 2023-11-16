@@ -6,6 +6,7 @@ import React, {useState, useEffect } from 'react'
 import Image from 'next/image'
 import Pagination from './pagination'
 
+
 const AttributesList = ({page, attributes, products}) => {
   const [price, setPrice] = useState('')
   const [country, setCountry] = useState('')
@@ -18,7 +19,8 @@ const AttributesList = ({page, attributes, products}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(100);
   const [locale, setLocale] = useState('en'); // État pour suivre la valeur de $locale
-  const [localeAttributes, setLocaleAttributes] = useState('en'); // État pour suivre la valeur de $locale
+  const [localeAttributes, setLocaleAttributes] = useState('en');
+  const [resetProducts, setResetProducts] = useState(products) // État pour suivre la valeur de $locale
 
 
   const toggleLocale = () => {
@@ -28,72 +30,7 @@ const AttributesList = ({page, attributes, products}) => {
     const newLocaleAttributes = localeAttributes === 'fr' ? 'en' : 'fr';
     setLocaleAttributes(newLocaleAttributes);
   };
-
-   
-
-  /*const fetchAllProducts = cache(async (page, locale) => {
-    try {
-      const { results } = await getProducts({
-        page,
-        $locale: locale
-      });
   
-      if (results.length === 0) {
-        // Aucun résultat trouvé, nous avons récupéré toutes les pages.
-        return results;
-      }
-  
-      // Récupérez les résultats des pages suivantes récursivement.
-      const nextPageResults = await fetchAllProducts(page + 1, locale);
-  
-      // Concaténez les résultats actuels avec les résultats des pages suivantes.
-      return [...results, ...nextPageResults];
-    } catch (error) {
-      console.error('Erreur lors du chargement des produits :', error);
-      throw error; // Vous pouvez gérer l'erreur ici selon vos besoins.
-    }
-  })
-  
-  const fetchProducts = cache(async () => {
-    try {
-      const allProducts = await fetchAllProducts(1, locale);
-      setProducts(allProducts);
-    } catch (error) {
-      console.error('Erreur lors du chargement des produits :', error);
-    }
-  })*/
-  
-  useEffect(() => {
-    products; // Appel initial pour charger les produits
-  
-    const interval = setInterval(products, 60000);
-  
-    return () => {
-      clearInterval(interval);
-    }
-  }, []);
-
-
-  /*const fetchAttributes = async () => {
-    try {
-      const { results } = await getAttributes({
-        page: 1, // Définissez la valeur de page ici
-        $locale: locale // Définissez la valeur de $locale ici
-      });
-      setAttributes(results)
-    } catch (error) {
-      console.error('Erreur lors du chargement des produits :', error)
-    }
-  }
-
-  useEffect(() => {
-    fetchAttributes()
-    const interval = setInterval(fetchAttributes, 60000)
-
-    return () => {
-      clearInterval(interval) // Nettoyage de l'intervalle lors du démontage du composant
-    }
-  }, [])*/
 
   const sortedProducts = products.sort((a, b) => {
     if (sorting === 'asc') {
@@ -218,7 +155,6 @@ const AttributesList = ({page, attributes, products}) => {
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  console.log(currentProducts)
 
   return (
     <div>

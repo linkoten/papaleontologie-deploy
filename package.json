@@ -34,7 +34,7 @@
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
     "server-only": "^0.0.1",
-    "swell-js": "^3.20.1",
+    "swell-js": "^3.23.3",
     "swell-node": "^4.0.11",
     "swr": "^2.1.0"
   },

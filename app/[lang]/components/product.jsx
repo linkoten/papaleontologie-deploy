@@ -56,7 +56,6 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
     })
   }
   
-console.log(product)
 
   return (
     <>
