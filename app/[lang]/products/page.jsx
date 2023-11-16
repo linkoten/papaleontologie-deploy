@@ -2,10 +2,9 @@ import React from 'react';
 import AttributesList from '../components/filter/attributesList'
 import { getDictionary } from '../dictionaries';
 import { getAttributes, getProducts, getProducts2, getProducts3, getProducts4, getProducts5 } from '@/lib/swell/products';
-import { cache } from 'react'
 
 
-export default cache(async function Page({
+export default async function Page({
   params : { lang }
 }) {
 const {page } = await getDictionary(lang);
@@ -24,4 +23,4 @@ return (
     <AttributesList  page = {page} attributes={attributes} products={products}/>
    </div>
 );
-});
+};
