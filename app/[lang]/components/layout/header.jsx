@@ -23,7 +23,7 @@ const Header = ({layout}) => {
 
   return (
     <>
-      <header data-theme='corporate' className=' bg-fifth-color text-primary-content rounded-xl z-10 py-10 m-5  '>
+      <header data-theme='corporate' className=' bg-fifth-color text-primary-content rounded-xl z-10 py-6 m-5  '>
         <nav className='  container flex items-center justify-between'>
           {/* Logo */}
           <div>
