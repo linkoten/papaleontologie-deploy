@@ -12,6 +12,8 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { SignInButton, UserButton } from '@clerk/nextjs'
 import { SignedIn, SignedOut } from '@clerk/nextjs/app-beta/client'
 
+import Logo from './logo'
+
 
 const Header = ({layout}) => {
   const { data: cart, isLoading } = useSWR('cart', getCart)
@@ -21,15 +23,15 @@ const Header = ({layout}) => {
 
   return (
     <>
-      <header data-theme='corporate' className='  bg-fifth-color text-primary-content rounded-xl z-10 py-10 m-5  '>
-        <nav className=' container flex items-center justify-between'>
+      <header data-theme='corporate' className=' bg-fifth-color text-primary-content rounded-xl z-10 py-10 m-5  '>
+        <nav className='  container flex items-center justify-between'>
           {/* Logo */}
           <div>
             <Link
               href='/'
-              className=' transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center text-3xs font-bold uppercase tracking-widest sm:text-sm lg:text-2xl'
+              className=' grow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center text-3xs font-bold uppercase tracking-widest sm:text-sm lg:text-2xl'
             >
-              Papaleontologie
+              <Logo  />
             </Link>
           </div>
 
@@ -67,7 +69,8 @@ const Header = ({layout}) => {
             </SignedIn>
             <SignedOut>
               <SignInButton mode='modal'>
-                <button className=' rounded border border-gray-400 px-3 py-0.5'>
+                <button
+                 className=' btn-xs text-2xs md:btn-md md:text-md  rounded border border-gray-400 px-3 py-0.5 '>
                   {layout.connexion}
                 </button>
               </SignInButton>

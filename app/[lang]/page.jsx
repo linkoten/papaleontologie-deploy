@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import heroImage from '@/public/images/hero1.png'
-import Link from 'next/link'
 import { getDictionary } from './dictionaries';
 
 

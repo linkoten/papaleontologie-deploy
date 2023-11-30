@@ -2,7 +2,7 @@
 
 import { formatCurrency } from '@/lib/utils'
 import Link from 'next/link'
-import React, {useState, useEffect } from 'react'
+import React, {useState } from 'react'
 import Image from 'next/image'
 import Pagination from './pagination'
 
@@ -18,18 +18,17 @@ const AttributesList = ({page, attributes, products}) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(100);
-  const [locale, setLocale] = useState('en'); // État pour suivre la valeur de $locale
-  const [localeAttributes, setLocaleAttributes] = useState('en');
-  const [resetProducts, setResetProducts] = useState(products) // État pour suivre la valeur de $locale
+ // const [locale, setLocale] = useState('en'); // État pour suivre la valeur de $locale
+ // const [localeAttributes, setLocaleAttributes] = useState('en');
 
 
-  const toggleLocale = () => {
+  /*const toggleLocale = () => {
     // Toggle entre 'fr' et 'en' en fonction de la valeur actuelle de locale
     const newLocale = locale === 'fr' ? 'en' : 'fr';
     setLocale(newLocale);
     const newLocaleAttributes = localeAttributes === 'fr' ? 'en' : 'fr';
     setLocaleAttributes(newLocaleAttributes);
-  };
+  };*/
   
 
   const sortedProducts = products.sort((a, b) => {
@@ -170,12 +169,6 @@ const AttributesList = ({page, attributes, products}) => {
         {' '}
         {page.shop.header}{' '}
       </h2>
-      <div className='flex justify-end'>
-      <button className='btn btn-outline  mx-12 mt-8 sm:btn-lg'
-      onClick={toggleLocale}>
-        {locale === 'fr' ? 'English Version' : 'Version Française'}
-      </button>
-    </div>
      
       <div className=' m-5 rounded-xl'>
         <div className='h-full w-full flex-col place-items-center  '>
