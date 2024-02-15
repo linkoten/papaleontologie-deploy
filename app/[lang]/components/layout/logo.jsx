@@ -9,7 +9,7 @@ const logo = () => {
         <Image
           alt=''
           src={logoImage}
-          className=' inset-0 -z-10   object-cover  bg-black'
+          className=' -z-10   object-cover  bg-black'
         />
         
     );

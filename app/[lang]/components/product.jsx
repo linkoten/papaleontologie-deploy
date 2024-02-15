@@ -8,7 +8,6 @@ import { useSWRConfig } from 'swr'
 import clsx from 'clsx'
 
 import { Tab } from '@headlessui/react'
-import { StarIcon } from '@heroicons/react/20/solid'
 import { formatCurrency } from '@/lib/utils'
 import { addToCart } from '@/lib/swell/cart'
 import { Blinker } from '../components/ui/loading'
@@ -87,7 +86,7 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
             <Tab.Group as='div' className='flex flex-col-reverse'>
               {/* Image selector */}
               <div className='mx-auto mt-6  w-full max-w-2xl sm:block lg:max-w-none'>
-                <Tab.List className='grid grid-cols-4 gap-6'>
+                <Tab.List className='grid grid-cols-3 md:grid-cols-4 gap-6'>
                   {product.images.map(image => (
                     <Tab
                       key={image.id}
@@ -153,28 +152,6 @@ const Product = ({ frenchProduct, englishProduct, page }) => {
                 <p className='text-3xl tracking-tight text-neutral'>
                   {formatCurrency({ amount: product.price })}
                 </p>
-              </div>
-
-              {/* Reviews */}
-              <div className='mt-3'>
-                <h3 className='sr-only'>Reviews</h3>
-                <div className='flex items-center'>
-                  <div className='flex items-center'>
-                    {[0, 1, 2, 3, 4].map(rating => (
-                      <StarIcon
-                        key={rating}
-                        className={clsx(
-                          (product.rating || 4) > rating
-                            ? 'text-yellow-500'
-                            : 'text-stone-300',
-                          'h-5 w-5 flex-shrink-0'
-                        )}
-                        aria-hidden='true'
-                      />
-                    ))}
-                  </div>
-                  <p className='sr-only'>{product.rating} out of 5 stars</p>
-                </div>
               </div>
 
               <div className='mt-6'>
