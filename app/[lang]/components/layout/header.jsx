@@ -26,14 +26,12 @@ const Header = ({layout}) => {
       <header data-theme='corporate' className=' bg-fifth-color text-primary-content rounded-xl z-10 py-6 m-5  '>
         <nav className='  container flex items-center justify-between'>
           {/* Logo */}
-          <div className='w-[150px] '>
             <Link
               href='/'
-              className='  grow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 flex items-center text-3xs font-bold uppercase tracking-widest sm:text-sm lg:text-2xl'
+              className=' w-[200px] md:w-[250px]  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300  items-center  '
             >
               <Logo  />
             </Link>
-          </div>
 
           {/* Nav links */}
           <ul className='flex items-center gap-2 sm:gap-6 lg:gap-10'>

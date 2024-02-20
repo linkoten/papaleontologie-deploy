@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Papaleontologie',
+  title: 'Paleolitho',
   description: 'A Fossil E-Commerce Website where you will find Rare and Uniques Fossils from Morroco and France, especially Trilobites and Shells.'
 }
 
