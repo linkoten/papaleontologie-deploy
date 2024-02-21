@@ -67,7 +67,7 @@ const renderers = {
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className=' my-2 text-2xl font-bold text-third-color  dark:text-sixth-color'>
+    <h3 className=' text-gray-900 my-4 mb-4 flex items-center justify-center text-xl font-bold text-third-color dark:text-sixth-color md:text-3xl lg:text-3xl'>
       {children}
     </h3>
   ),
@@ -77,9 +77,33 @@ const renderers = {
     </h4>
   ),
   h5: ({ children }) => (
-    <h5 className=' my-2 text-xl font-bold text-third-color dark:text-sixth-color'>
+    <h5 className=' my-2 text-sm md:text-xl font-bold text-third-color dark:text-sixth-color'>
       {children}
     </h5>
+  ),
+  table: ({ children }) => (
+    <table className=' text-center border md:w-1/2 md:mx-auto'>
+      {children}
+    </table>
+  
+  ),
+  table_head: ({ children }) => (
+    <thead className=' text-center bg-color-primary border'>
+      {children}
+    </thead>
+  
+  ),
+  table_cell: ({ children }) => (
+    <td className='  border text-xs px-2'>
+      {children}
+    </td>
+  
+  ),
+  table_header_cell: ({ children }) => (
+    <th className='  border'>
+      {children}
+    </th>
+  
   ),
   h6: ({ children }) => (
     <h6 className=' text-large my-2 font-bold text-third-color dark:text-sixth-color'>
@@ -87,7 +111,7 @@ const renderers = {
     </h6>
   ),
   p: ({ children }) => (
-    <p className=' my-4  text-lg text-fifth-color  dark:text-sixth-color'>
+    <p className=' my-4  text-xs md:text-lg text-fifth-color  dark:text-sixth-color'>
       {children}
     </p>
   ),
@@ -209,10 +233,8 @@ export default function Posts({ params }) {
       </div>
       
 
-      <h1 className='mb-4 mt-12 flex items-center justify-center text-3xl font-bold text-third-color dark:text-sixth-color md:text-5xl lg:text-6xl'>
-        {currentPosts.title}
-      </h1>
-      <p className=' text-lg font-bold badge badge-outline'>
+      
+      <p className=' text-lg font-bold badge badge-outline my-4'>
         {currentPosts.date}
       </p>
       <RichText content={currentPosts.content.json.children} renderers={renderers} />
