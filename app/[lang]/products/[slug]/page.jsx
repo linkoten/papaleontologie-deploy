@@ -3,7 +3,10 @@ import Product from '../../components/product'
 import { getDictionary } from '../../dictionaries'
 import { cache } from 'react'
 
-export default cache(async function Page({
+export const revalidate = 60
+
+
+export default async function Page({
   params: {lang, slug }
 }) {
   const {page } = await getDictionary(lang);
@@ -11,4 +14,4 @@ export default cache(async function Page({
   const englishProduct = await getEnglishProductBySlugOrId(slug)
 
   return <Product frenchProduct={frenchProduct} page={page} englishProduct={englishProduct} />
-})
+}
