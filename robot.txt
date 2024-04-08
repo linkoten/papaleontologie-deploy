@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow specific directories
+
+Disallow: /node_modules
+
+# Allow images and scripts
+Allow: /images
+Allow: /js
+
+
+
+# Sitemap
+Sitemap: https://www.paleolitho.com/sitemap.xml
